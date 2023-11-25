@@ -37,8 +37,7 @@ def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, cur
 
         value = intToDecimal(amount, 18)
         adapterParams = get_adapterParams(250000, value) + wallet[2:].lower()
-        send_value = contract.functions.estimateGasBridgeFee(
-            LAYERZERO_CHAINS_ID[to_chain], False, adapterParams).call()
+        send_value = contract.functions.estimateGasBridgeFee(LAYERZERO_CHAINS_ID[to_chain], False, adapterParams).call()
 
         contract_txn = contract.functions.bridgeGas(
             LAYERZERO_CHAINS_ID[to_chain],
@@ -75,9 +74,9 @@ def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, cur
             logger.error(f"{module_str} : баланс равен 0")
 
     except Exception as error:
-        if 'execution reverted' in str(error):#скорее неверный контракт попробуем другой приемник
+        if 'execution reverted' in str(error) and not 'gas' in str(error):#скорее неверный контракт попробуем другой приемник
             number += 1
-            if from_chain == TO_CHAINS[number]:
+            if number < len(TO_CHAINS) and from_chain == TO_CHAINS[number]:
                 number += 1
             if number < len(TO_CHAINS):
                 logger.info('Выпала неподходящая сеть приемника, пробую другую....')
@@ -132,3 +131,4 @@ if __name__ == '__main__':
             sleeping(SLEEP_FROM, SLEEP_TO)
 
     print("Скрипт закончил работу.")
+
