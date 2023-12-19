@@ -5,27 +5,36 @@ SLEEP_TO   = 30
 # нужно ли перемешивать кошельки. True = да. False = нет
 RANDOM_WALLETS = True # True / False
 
-MAX_GWEI = 35 # gas в gwei
+MAX_GWEI = 150 # gas в gwei
 
-COUNT_TX = [0, 1] #от 1 до 2 транзакций
+COUNT_TX = [1, 1] #от 1 до 2 транзакций
 
-FROM_CHAINS = ['arbitrum', 'optimism', 'bsc', 'polygon', 'celo', 'nova', 'zksync', 'fantom', 'gnosis'] #['arbitrum', 'optimism', 'bsc', 'polygon', 'celo', 'nova', 'zksync', 'fantom', 'gnosis']
-TO_CHAINS = ['kava', 'nova', 'opbnb', 'klaytn', 'moonbeam'] #['base', 'kava', 'klaytn', 'opbnb', 'nova', 'linea', 'zora', 'scroll', 'conflux', 'gnosis', 'celo', 'bsc']
-COUNT_NATIV = [0.00001, 0.00002] #от 0.0001 до 0.0002 нативного токена приемника
+FROM_CHAINS = ['optimism', 'bsc', 'arbitrum', 'polygon', 'celo', 'gnosis', 'zksync', 'nova', 'moonbeam', 'fantom'] #['optimism','bsc','arbitrum','polygon','celo','gnosis','zksync','nova','moonbeam','fantom']
+COUNT_NATIV = [0.0001, 0.0002] #от 0.0001 до 0.0002 нативного токена приемника
 
-
-MIN_NATIV = {
-    'arbitrum'  : 0.00012, #0.25$
-    'bsc'       :  0.0008, #0.2$
-    'optimism'  : 0.00008, #0.17$
-    'polygon'   :  0.0009, #0.2$
-    'celo'      :  0.0008, #0.2$
-    'nova'      : 0.0001,
-    'zksync'      : 0.0001,
-    'fantom'      : 0.2,
-    'gnosis'      : 0.07,
+MERKLY_REFUEL_LIST = {
+    'optimism':     ['core', 'kava', 'conflux', 'astar', 'fuse', 'celo', 'moonbeam', 'gnosis', 'harmony'],
+    'bsc':          ['core', 'kava', 'conflux', 'astar', 'fuse', 'celo', 'moonbeam', 'gnosis', 'harmony'],
+    'arbitrum':     ['core', 'kava', 'conflux', 'astar', 'fuse', 'celo', 'moonbeam', 'gnosis', 'harmony'],
+    'polygon':      ['core', 'kava', 'conflux', 'astar', 'fuse', 'celo', 'moonbeam', 'gnosis', 'harmony'],
+    'celo':         ['gnosis', 'conflux', 'fuse'],
+    'gnosis':       ['celo', 'moonbeam', 'klaytn'],
+    'zksync':       ['klaytn', 'nova', 'kava', 'fantom', 'opbnb'],
+    'nova':         ['moonbeam', 'fantom', 'kava'],
+    'moonbeam':     ['nova', 'gnosis', 'fantom', 'dfk'],
+    'fantom':       ['celo', 'moonbeam', 'kava', 'gnosis', 'dfk']
 }
 
-
-
+MIN_NATIV = {
+    'optimism':     0.00008,
+    'bsc':          0.0008,
+    'arbitrum':     0.00012,
+    'polygon':      0.0009,
+    'celo':         0.0008,
+    'gnosis':       0.07,
+    'zksync':       0.0001,
+    'nova':         0.0001,
+    'moonbeam':     0.2,
+    'fantom':       0.2,
+}
 
