@@ -10,6 +10,17 @@ LAYERZERO_CHAINS_ID = {
     'celo'      : 125,
     'gnosis'    : 145,
     'bsc'       : 102,
+    'zksync'       : 165,
+    'nova'       : 175,
+    'opbnb'       : 202,
+    'klaytn'       : 150,
+    'moonbeam'     : 126,
+    'harmony'      : 116,
+    'dfk'          : 115,
+    'fantom'       : 112,
+    'gnosis'       : 145,
+    'moonriver'    : 167,
+    'fuse'         : 138,
 }
 
 MERKLY_CONTRACTS = {
@@ -18,7 +29,13 @@ MERKLY_CONTRACTS = {
     'arbitrum'      : '0xaa58e77238f0e4a565343a89a79b4addd744d649',
     'polygon'       : '0xa184998ec58dc1da77a1f9f1e361541257a50cf4',
     'celo'          : '0xe33519c400b8f040e73aeda2f45dfdd4634a7ca0',
-    'gnosis'        : '0x556f119c7433b2232294fb3de267747745a1dab4',
+    'gnosis'        : '0xb58f5110855fbef7a715d325d60543e7d4c18143',
+    'zksync'        : '0x6dd28C2c5B91DD63b4d4E78EcAC7139878371768',
+    'nova'        : '0x484c402B0c8254BD555B68827239BAcE7F491023',
+    'moonbeam'     : '0x766b7aC73b0B33fc282BdE1929db023da1fe6458',
+    'opbnb'        : '0xE47b05F2026a82048caAECf5caE58e5AAE2405eA',
+    'klaytn'       : '0xd02ffae68d902453b44a9e45dc257aca54fb88b2',
+    'fantom'        : '0x97337A9710BEB17b8D77cA9175dEFBA5e9AFE62e',
 }
 
 # меняем рпс на свои
