@@ -22,8 +22,8 @@ MIN_NATIV = {
     'celo'      :  0.0008, #0.2$
     'nova'      : 0.0001,
     'zksync'      : 0.0001,
-    'fantom'      : 0.0001,
-    'gnosis'      : 0.0001,
+    'fantom'      : 0.2,
+    'gnosis'      : 0.07,
 }
 
 
