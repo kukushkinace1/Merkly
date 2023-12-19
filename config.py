@@ -20,7 +20,7 @@ MERKLY_REFUEL_LIST = {
     'celo':         ['gnosis', 'conflux', 'fuse'],
     'gnosis':       ['celo', 'moonbeam', 'klaytn'],
     'zksync':       ['klaytn', 'nova', 'kava', 'opbnb'],
-    'nova':         ['moonbeam', 'fantom', 'kava'],
+    'nova':         ['moonbeam', 'kava'],
     'moonbeam':     ['nova', 'gnosis', 'fantom', 'dfk'],
     'fantom':       ['celo', 'moonbeam', 'kava', 'gnosis', 'dfk']
 }
