@@ -5,9 +5,9 @@ SLEEP_TO   = 30
 # нужно ли перемешивать кошельки. True = да. False = нет
 RANDOM_WALLETS = True # True / False
 
-MAX_GWEI = 150 # gas в gwei
+MAX_GWEI = 50 # gas в gwei
 
-COUNT_TX = [1, 1] #от 1 до 2 транзакций
+COUNT_TX = [1, 2] #от 1 до 2 транзакций
 
 FROM_CHAINS = ['optimism', 'bsc', 'arbitrum', 'polygon', 'celo', 'gnosis', 'zksync', 'nova', 'moonbeam', 'fantom'] #['optimism','bsc','arbitrum','polygon','celo','gnosis','zksync','nova','moonbeam','fantom']
 COUNT_NATIV = [0.0001, 0.0002] #от 0.0001 до 0.0002 нативного токена приемника
@@ -19,7 +19,7 @@ MERKLY_REFUEL_LIST = {
     'polygon':      ['core', 'kava', 'conflux', 'astar', 'fuse', 'celo', 'moonbeam', 'gnosis', 'harmony'],
     'celo':         ['gnosis', 'conflux', 'fuse'],
     'gnosis':       ['celo', 'moonbeam', 'klaytn'],
-    'zksync':       ['klaytn', 'nova', 'kava', 'fantom', 'opbnb'],
+    'zksync':       ['klaytn', 'nova', 'kava', 'opbnb'],
     'nova':         ['moonbeam', 'fantom', 'kava'],
     'moonbeam':     ['nova', 'gnosis', 'fantom', 'dfk'],
     'fantom':       ['celo', 'moonbeam', 'kava', 'gnosis', 'dfk']
