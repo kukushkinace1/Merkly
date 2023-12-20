@@ -1,5 +1,4 @@
-from const import DATA
-from const import ERC20_ABI
+from const import DATA, ERC20_ABI
 from config import MAX_GWEI
 
 import time
