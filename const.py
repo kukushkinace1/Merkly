@@ -35,6 +35,8 @@ MERKLY_CONTRACTS = {
     'nova':         '0xB6789dACf323d60F650628dC1da344d502bC41E3',
     'moonbeam':     '0x671861008497782F7108D908D4dF18eBf9598b82',
     'fantom':       '0xF56605276cefffe32DFD8B6bF80B93c2A6840136',
+    'klaytn':       '0x79DB0f1A83f8e743550EeB5DD5B0B83334F2F083',
+    'harmony':      '0x671861008497782F7108D908D4dF18eBf9598b82',
 }
 
 # меняем рпс на свои
@@ -53,6 +55,7 @@ DATA = {
     'gnosis':       {'rpc': 'https://1rpc.io/gnosis',         'scan': 'https://gnosisscan.io/tx',             'token': 'xDAI','chain_id': 100},
     'core':         {'rpc': 'https://rpc.coredao.org',        'scan': 'https://scan.coredao.org/tx',          'token': 'CORE','chain_id': 1116},
     'harmony':      {'rpc': 'https://api.harmony.one',        'scan': 'https://explorer.harmony.one/tx',      'token': 'ONE', 'chain_id': 1666600000},
+    'klaytn':       {'rpc': 'https://public-en-cypress.klaytn.net/', 'scan': 'https://klaytnscope.com/tx/',      'token': 'KLAY', 'chain_id': 1666600000},
     'moonbeam':     {'rpc': 'https://rpc.ankr.com/moonbeam',  'scan': 'https://moonscan.io/tx',               'token': 'GLMR','chain_id': 1284},
     'moonriver':    {'rpc': 'https://moonriver.public.blastapi.io','scan': 'https://moonriver.moonscan.io/tx','token': 'MOVR','chain_id': 1285},
     'linea':        {'rpc': 'https://rpc.linea.build',        'scan': 'https://lineascan.build/tx',           'token': 'ETH', 'chain_id': 59144},

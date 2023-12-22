@@ -18,7 +18,7 @@ ABI_MERKLY_REFUEL = '[{"inputs":[{"internalType":"address","name":"_lzEndpoint",
 def get_bridge_fee_params(dst_chain_id: int, value: int, contract, wallet):
     data = Web3.to_hex(encode_packed(["uint16", "uint", "uint", "address"], [2, 250000, value, wallet]))
     fee = contract.functions.estimateSendFee(dst_chain_id, '0x', data).call()
-    return data, int(fee[0] * 1.01)
+    return data, int(fee[0] * 1.10)
 
 
 def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, current_account, accounts, number=0):
@@ -60,7 +60,10 @@ def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, cur
             else:
                 contract_txn = add_gas_price(web3, contract_txn)
 
-            contract_txn = add_gas_limit_layerzero(web3, contract_txn)
+            if from_chain == 'moonbeam':
+                contract_txn['gas'] = 500000
+            else:
+                contract_txn = add_gas_limit_layerzero(web3, contract_txn)
 
             tx_hash = sign_tx(web3, contract_txn, private_key)
             tx_link = f'{DATA[from_chain]["scan"]}/{tx_hash}'
