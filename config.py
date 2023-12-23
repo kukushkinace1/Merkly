@@ -22,7 +22,7 @@ MERKLY_REFUEL_LIST = {
     'nova':         ['moonbeam', 'kava'],
     'fantom':       ['celo', 'moonbeam', 'kava', 'gnosis', 'dfk'],
     'moonbeam':     ['celo', 'gnosis', 'dfk', 'harmony'],#10
-    'celo':         ['gnosis', 'conflux', 'fuse'],#10
+    'celo':         ['gnosis', 'moonbeam', 'fuse'],#10
     'klaytn':       ['dfk', 'fuse', 'gnosis'],#10
     'harmony':      ['dfk', 'moonbeam'],#10
 }
