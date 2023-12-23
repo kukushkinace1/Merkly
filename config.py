@@ -36,7 +36,7 @@ MIN_NATIV = {
     'zksync':       0.0001,
     'nova':         0.0001,
     'fantom':       0.2,
-    'moonbeam':     0.3,
+    'moonbeam':     0.4,
     'celo':         0.1,
     'klaytn':       0.3,
     'harmony':      6,
