@@ -39,6 +39,6 @@ MIN_NATIV = {
     'moonbeam':     0.4,
     'celo':         0.1,
     'klaytn':       0.3,
-    'harmony':      3,
+    'harmony':      5,
 }
 
