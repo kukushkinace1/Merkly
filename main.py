@@ -81,14 +81,17 @@ def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, cur
 
 
 def from_chain_balance(account):
-
+    
     FROM_CHAINS_RETURN = []
     for chain in FROM_CHAINS:
-        min_nativ = MIN_NATIV[chain] * 10 ** 18
-        w3 = Web3(Web3.HTTPProvider(DATA[chain]['rpc']))
-        balance = w3.eth.get_balance(account.address)
-        if balance > min_nativ:
-            FROM_CHAINS_RETURN.append(chain)
+        try:
+            min_nativ = MIN_NATIV[chain] * 10 ** 18
+            w3 = Web3(Web3.HTTPProvider(DATA[chain]['rpc']))
+            balance = w3.eth.get_balance(account.address)
+            if balance > min_nativ:
+                FROM_CHAINS_RETURN.append(chain)
+        except:
+            pass
 
     return FROM_CHAINS_RETURN
 
