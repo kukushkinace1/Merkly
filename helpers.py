@@ -98,7 +98,7 @@ def check_allowance(chain, token_address, wallet, spender):
 
 
 def get_web3(chain):
-    rpc = DATA[chain]['rpc']
+    rpc = random.choice(DATA[chain]['rpc'])
     web3 = Web3(Web3.HTTPProvider(rpc))
     return web3
 
