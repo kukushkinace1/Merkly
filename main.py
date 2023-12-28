@@ -1,7 +1,11 @@
+import time
+
 from eth_abi.packed import encode_packed
 from const import MERKLY_CONTRACTS, LAYERZERO_CHAINS_ID, DATA
-from config import SLEEP_FROM, SLEEP_TO, RANDOM_WALLETS, COUNT_TX, FROM_CHAINS, COUNT_NATIV, MIN_NATIV, MERKLY_REFUEL_LIST
-from helpers import get_web3, add_gas_price, sign_tx, add_gas_limit_layerzero, check_status_tx, intToDecimal, sleeping, cheker_gwei
+from config import SLEEP_FROM, SLEEP_TO, RANDOM_WALLETS, COUNT_TX, FROM_CHAINS, COUNT_NATIV, MIN_NATIV, \
+    MERKLY_REFUEL_LIST
+from helpers import get_web3, add_gas_price, sign_tx, add_gas_limit_layerzero, check_status_tx, intToDecimal, sleeping, \
+    cheker_gwei
 
 from loguru import logger
 from web3 import Web3
@@ -81,17 +85,24 @@ def merkly_refuel(from_chain, to_chain, amount_from, amount_to, private_key, cur
 
 
 def from_chain_balance(account):
-    
     FROM_CHAINS_RETURN = []
+
     for chain in FROM_CHAINS:
-        try:
-            min_nativ = MIN_NATIV[chain] * 10 ** 18
-            w3 = Web3(Web3.HTTPProvider(DATA[chain]['rpc']))
-            balance = w3.eth.get_balance(account.address)
-            if balance > min_nativ:
-                FROM_CHAINS_RETURN.append(chain)
-        except:
-            pass
+        Fail = True
+        attemp = 0
+        while Fail and attemp < 5:
+            attemp += 1
+            try:
+                min_nativ = MIN_NATIV[chain] * 10 ** 18
+                w3 = Web3(Web3.HTTPProvider(random.choice(DATA[chain]['rpc'])))
+                balance = w3.eth.get_balance(account.address)
+                Fail = False
+                if balance > min_nativ:
+                    FROM_CHAINS_RETURN.append(chain)
+            except:
+                logger.warning(f'{chain} проблемы с рпц, попробую другую, если она есть спустя минуту')
+                time.sleep(60)
+                pass
 
     return FROM_CHAINS_RETURN
 
@@ -119,11 +130,10 @@ if __name__ == '__main__':
                 continue
             to_chain = random.choice(MERKLY_REFUEL_LIST[from_chain])
 
-            if (current_tranz+1) > random.randint(COUNT_TX[0], COUNT_TX[1]):#проверка на кол-во
+            if (current_tranz + 1) > random.randint(COUNT_TX[0], COUNT_TX[1]):  # проверка на кол-во
                 continue
             cheker_gwei()
-            merkly_refuel(from_chain, to_chain, min_count, max_count, key, current_account+1, len(keys))
+            merkly_refuel(from_chain, to_chain, min_count, max_count, key, current_account + 1, len(keys))
             sleeping(SLEEP_FROM, SLEEP_TO)
 
     print("Скрипт закончил работу.")
-
