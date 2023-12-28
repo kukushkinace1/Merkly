@@ -47,7 +47,7 @@ def check_status_tx(chain, tx_hash):
 
     while True:
         try:
-            rpc_chain = DATA[chain]['rpc']
+            rpc_chain = random.choice(DATA[chain]['rpc'])
             web3 = Web3(Web3.HTTPProvider(rpc_chain))
             status_ = web3.eth.get_transaction_receipt(tx_hash)
             status = status_["status"]
@@ -89,7 +89,7 @@ def add_gas_price(web3, contract_txn):
 
 def check_allowance(chain, token_address, wallet, spender):
     try:
-        web3 = Web3(Web3.HTTPProvider(DATA[chain]['rpc']))
+        web3 = Web3(Web3.HTTPProvider(random.choice(DATA[chain]['rpc'])))
         contract = web3.eth.contract(address=Web3.to_checksum_address(token_address), abi=ERC20_ABI)
         amount_approved = contract.functions.allowance(wallet, spender).call()
         return amount_approved
