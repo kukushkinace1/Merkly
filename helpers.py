@@ -20,12 +20,16 @@ def sign_tx(web3, contract_txn, privatkey):
 
 
 def cheker_gwei():
-    max_gwei = MAX_GWEI * 10 ** 9
-    if w3_eth.eth.gas_price > max_gwei:
-        logger.info('Газ большой, пойду спать')
-        while w3_eth.eth.gas_price > max_gwei:
-            time.sleep(60)
-        logger.info('Газ в норме. Продолжаю работу')
+    try:
+        max_gwei = MAX_GWEI * 10 ** 9
+        if w3_eth.eth.gas_price > max_gwei:
+            logger.info('Газ большой, пойду спать')
+            while w3_eth.eth.gas_price > max_gwei:
+                time.sleep(60)
+            logger.info('Газ в норме. Продолжаю работу')
+    except:
+        w3_eth = random.choice(DATA['ethereum']['rpc'])
+        cheker_gwei()
 
 
 def check_data_token(chain, token_address):
