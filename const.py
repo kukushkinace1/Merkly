@@ -40,7 +40,7 @@ MERKLY_CONTRACTS = {
 }
 
 DATA = {
-    'ethereum':     {'rpc': ['https://rpc.ankr.com/eth'],       'scan': 'https://etherscan.io/tx',              'token': 'ETH', 'chain_id': 1},
+    'ethereum':     {'rpc': ['https://rpc.ankr.com/eth', 'https://ethereum.publicnode.com'],       'scan': 'https://etherscan.io/tx',              'token': 'ETH', 'chain_id': 1},
     'optimism':     {'rpc': ['https://rpc.ankr.com/optimism'],  'scan': 'https://optimistic.etherscan.io/tx',   'token': 'ETH', 'chain_id': 10},
     'bsc':          {'rpc': ['https://rpc.ankr.com/bsc'],       'scan': 'https://bscscan.com/tx',               'token': 'BNB', 'chain_id': 56},
     'polygon':      {'rpc': ['https://rpc.ankr.com/polygon'],   'scan': 'https://polygonscan.com/tx',           'token': 'MATIC','chain_id': 137},
