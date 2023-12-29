@@ -28,7 +28,7 @@ def cheker_gwei():
                 time.sleep(60)
             logger.info('Газ в норме. Продолжаю работу')
     except:
-        w3_eth = random.choice(DATA['ethereum']['rpc'])
+        w3_eth = Web3(Web3.HTTPProvider(random.choice(DATA['ethereum']['rpc'])))
         cheker_gwei()
 
 
