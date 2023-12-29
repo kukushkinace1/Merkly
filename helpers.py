@@ -8,7 +8,7 @@ import random
 from tqdm import tqdm
 
 max_time_check_tx_status = 360
-w3_eth = Web3(Web3.HTTPProvider('https://rpc.ankr.com/eth'))
+w3_eth = random.choice(DATA['ethereum']['rpc'])
 
 
 def sign_tx(web3, contract_txn, privatkey):
