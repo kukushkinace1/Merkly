@@ -19,7 +19,7 @@ def sign_tx(web3, contract_txn, privatkey):
     return tx_hash
 
 
-def cheker_gwei():
+def cheker_gwei(w3_eth=None):
     try:
         max_gwei = MAX_GWEI * 10 ** 9
         if w3_eth.eth.gas_price > max_gwei:
@@ -29,7 +29,8 @@ def cheker_gwei():
             logger.info('Газ в норме. Продолжаю работу')
     except:
         w3_eth = Web3(Web3.HTTPProvider(random.choice(DATA['ethereum']['rpc'])))
-        cheker_gwei()
+        time.sleep(60)
+        cheker_gwei(w3_eth)
 
 
 def check_data_token(chain, token_address):
