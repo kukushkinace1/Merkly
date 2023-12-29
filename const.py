@@ -55,7 +55,7 @@ DATA = {
     'core':         {'rpc': ['https://rpc.coredao.org'],        'scan': 'https://scan.coredao.org/tx',          'token': 'CORE','chain_id': 1116},
     'harmony':      {'rpc': ['https://api.harmony.one'],        'scan': 'https://explorer.harmony.one/tx',      'token': 'ONE', 'chain_id': 1666600000},
     'klaytn':       {'rpc': ['https://klaytn.blockpi.network/v1/rpc/public', 'https://rpc.ankr.com/klaytn'], 'scan': 'https://klaytnscope.com/tx/',      'token': 'KLAY', 'chain_id': 1666600000},
-    'moonbeam':     {'rpc': ['https://rpc.ankr.com/moonbeam'],  'scan': 'https://moonscan.io/tx',               'token': 'GLMR','chain_id': 1284},
+    'moonbeam':     {'rpc': ['https://rpc.ankr.com/moonbeam', 'https://1rpc.io/glmr'],  'scan': 'https://moonscan.io/tx',               'token': 'GLMR','chain_id': 1284},
     'moonriver':    {'rpc': ['https://moonriver.public.blastapi.io'],'scan': 'https://moonriver.moonscan.io/tx','token': 'MOVR','chain_id': 1285},
     'linea':        {'rpc': ['https://rpc.linea.build'],        'scan': 'https://lineascan.build/tx',           'token': 'ETH', 'chain_id': 59144},
     'base':         {'rpc': ['https://mainnet.base.org'],       'scan': 'https://basescan.org/tx',              'token': 'ETH', 'chain_id': 8453},
